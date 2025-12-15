@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Olivia Xing">
+<meta name="author" content="Jianling Zhao">
+<meta name="author" content="Zihan Luo">
+<meta name="author" content="Qian Guo">
+
+<title>We Love Python’s Group Project</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="FA_6_files/libs/clipboard/clipboard.min.js"></script>
+<script src="FA_6_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="FA_6_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="FA_6_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="FA_6_files/libs/quarto-html/popper.min.js"></script>
+<script src="FA_6_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="FA_6_files/libs/quarto-html/anchor.min.js"></script>
+<link href="FA_6_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="FA_6_files/libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="FA_6_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="FA_6_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="FA_6_files/libs/bootstrap/bootstrap-d6a003b94517c951b2d65075d42fb01b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+</head><body class="fullcontent quarto-light">\usepackage{xurl}
+
+
+
+
+
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">We Love Python’s Group Project</h1>
+<p class="subtitle lead">Data Analysis and Policy Briefing on Airbnb and Professional Landlords in London</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-contents">
+             <p>Olivia Xing </p>
+             <p>Jianling Zhao </p>
+             <p>Zihan Luo </p>
+             <p>Qian Guo </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In the middle of an election campaign, a media story linking a mayoral advisor to multiple Airbnb properties has intensified public concern about the role of short-term rentals in London’s housing crisis. In response, the opposition has proposed mandatory registration and higher Council Tax for professional landlords, arguing that Airbnb is “out of control.” As requested by the Mayor, this report assesses the scale of professional landlords and properties on Airbnb in London. On that basis, this report further evaluates the likely impacts of the opposition’s proposal for residents, landlords, and the city, using data, assumptions, and clear reasoning to inform strategic decisions.</p>
+</section>
+<section id="is-airbnb-out-of-control-in-london" class="level2">
+<h2 class="anchored" data-anchor-id="is-airbnb-out-of-control-in-london">1. Is Airbnb out of control in London?</h2>
+<p>We will explore if Airbnb in London is out of control from three aspects:</p>
+<section id="how-do-airbnb-listings-distribute-in-london" class="level3">
+<h3 class="anchored" data-anchor-id="how-do-airbnb-listings-distribute-in-london">1.1 How do Airbnb listings distribute in London?</h3>
+<p>We start the analysis by investigating the situation of Airbnb density in London with a map of the distribution of each type of room.</p>
+<div id="4fd58c93" class="cell" data-execution_count="14">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FA_6_files/figure-html/cell-15-output-1.png" width="1108" height="1042" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Figure 1 shows a significant disparity in listings between “Entire Homes/Apt and Hotel Rooms” and “Private and Shared rooms” in London. This trend is particularly pronounced in central London where the dense clustering of red dots suggests that Airbnb is a short-term commercial rental market rather than a platform for sharing spare bedrooms under the “sharing economy”. This is contrary to the objectives of the Deregulation Act 2015 which aims to support residents rather than provide opportunities for the commercial sector.</p>
+<div id="f9443897" class="cell" data-execution_count="16">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FA_6_files/figure-html/cell-17-output-1.png" width="1347" height="971" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>When viewed alongside Figure 1, Figure 2 further demonstrates a highly concentrated commercialisation of housing in Central London. The outer boroughs exhibit densities of approximately 1% (lighter yellow/orange) which aligns with the concept of the “sharing economy”. However, there is a sudden spike to dark red in the centre, particularly in Westminster. This indicates a decoupling of central boroughs from the residential housing market.</p>
+<p>This distinct “heat effect” visually conveys that short-term rental platforms such as Airbnb are likely displacing long-term tenants and exacerbating the housing crisis in the city’s most desirable areas. We will explore this displacement trend in detail below.</p>
+</section>
+<section id="airbnbs-negative-effects-on-the-long-term-rental-market-in-london" class="level3">
+<h3 class="anchored" data-anchor-id="airbnbs-negative-effects-on-the-long-term-rental-market-in-london">1.2 Airbnb’s negative effects on the long-term rental market in London</h3>
+<div id="4771e79e" class="cell" data-execution_count="18">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FA_6_files/figure-html/cell-19-output-1.png" width="1432" height="705" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Top 5 Boroughs where Airbnb exceeds Vacancy (Ratio &gt; 1):
+                      NAME  rate_pct  vacant_rate_perc      Ratio
+7               Wandsworth  2.138675          0.128932  16.587629
+0              Westminster  7.082351          0.963448   7.351047
+5                Islington  3.228311          0.700668   4.607477
+9   Hammersmith and Fulham  3.186462          0.715877   4.451128
+22          City of London  6.827803          1.980063   3.448276</code></pre>
+</div>
+</div>
+<p>Figure 3 further demonstrates that the situation of Airbnb in central London is not optimistic and reinforces our view that the platform is out of control in the city. In areas like <strong>Westminster</strong> and <strong>Kensington &amp; Chelsea</strong>, the number of active short-term rental properties (blue bars) has far exceeded the number of long-term vacant homes, while outer suburbs like <strong>Croydon</strong> and <strong>Bexley</strong> follow the traditional pattern—long-term vacant homes (red bars) remain the primary source of unused housing.</p>
+<p>This “crossover” effect refutes the notion that short-term rentals merely utilise surplus housing. Instead, it suggests that in the city’s most vibrant areas the tourism market consumes housing resources at a rate far exceeding the natural vacancy rate. When Airbnb listings are twice or more of the number of vacant homes the platform ceases to be a passive participant in the housing market and becomes a primary driver of scarcity effectively removing far more homes from the long-term rental market than are actually vacant.</p>
+<div id="c05f7324" class="cell" data-execution_count="20">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FA_6_files/figure-html/cell-21-output-1.png" width="1441" height="1043" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Figure 4 illustrates the distribution of housing pressure in London, revealing a significant disparity between the city centre and the suburbs.</p>
+<p>The map highlights a concentration of boroughs in central London such as Westminster and Kensington &amp; Chelsea marked in red. These areas are characterised by a high number of Airbnb listings and low vacancy rates. This suggests that the housing shortage in the city centre is not caused by vacant properties but rather by residential homes being converted into tourist accommodations.</p>
+<p>In contrast, the green areas in the outer suburbs indicate a more traditional pattern: there are high long-term vacancy rates but minimal Airbnb activity. This map demonstrates that the ‘Airbnb crisis’ is not a citywide phenomenon but rather a localised issue confined to the city centre where the platform is competing with residents for scarce housing resources.</p>
+</section>
+<section id="the-impacts-of-airbnb-on-rents-and-housing-prices-in-london" class="level3">
+<h3 class="anchored" data-anchor-id="the-impacts-of-airbnb-on-rents-and-housing-prices-in-london">1.3 The impacts of Airbnb on rents and housing prices in London</h3>
+<p>In the context of London’s persistent housing shortage, characterised by high demand and limited long-term rental supply, studies indicate that Airbnb activity can interact with tight housing markets in ways that place additional pressure on rents. <span class="citation" data-cites="Shabrin2021Air">Shabrin, Islam and Hasan (<a href="#ref-Shabrin2021Air" role="doc-biblioref">2021</a>)</span> suggest that Airbnb activity contributes to increases in both rents and housing prices in London, with a 100% increase in the density of possible Airbnb misuse being associated with up to an 8% increase in unit rental price per bedroom per week.</p>
+</section>
+<section id="limitations" class="level3">
+<h3 class="anchored" data-anchor-id="limitations">Limitations</h3>
+<p>The research results presented in this brief are influenced by multiple limitations in data and methodology. The calculation of vacancy rate is based on all houses not just those available for rent due to the inability to obtain vacancy rate data for the rental market. This makes the indicator an approximation as some vacant houses may be occupied by their owners or unavailable for rent. Consequently, the vacancy rate of Airbnb is also an approximation.</p>
+<p>Additionally, data from Inside Airbnb is a snapshot at a specific point in time and may not reflect market dynamics due to the constant increase or deletion of housing information. This could lead to overestimation or underestimation in the statistics of seasonal or temporary housing. Furthermore, the process of web scraping for this dataset may contain errors resulting in an underestimation of the number of housing units during data cleaning. For example, duplicate IDs or entries with more than six empty fields have been deleted.</p>
+<p>Finally, the housing stock data is from 2021 which may lead to minor deviations and other key factors affecting housing supply or Airbnb distribution (such as local regulations rental demand or real estate prices) are not included in this analysis.</p>
+</section>
+</section>
+<section id="scope-and-scale-of-the-proposal" class="level2">
+<h2 class="anchored" data-anchor-id="scope-and-scale-of-the-proposal">2. Scope and Scale of the Proposal</h2>
+<section id="how-many-professional-landlords-are-there" class="level3">
+<h3 class="anchored" data-anchor-id="how-many-professional-landlords-are-there">2.1 How many professional landlords are there?</h3>
+<section id="definition-of-professional-landlords" class="level4">
+<h4 class="anchored" data-anchor-id="definition-of-professional-landlords">Definition of Professional Landlords</h4>
+<p>Since the opposition proposal focusses on “professional landlords” it is crucial how we define these hosts. As <span class="citation" data-cites="botogarcia2024">Boto-García (<a href="#ref-botogarcia2024" role="doc-biblioref">2024</a>)</span> defines, “professional hosts are profit-oriented players who behave similarly to business corporations while non-professional hosts primarily engage in sharing-oriented supply”. The distinction between the two is generally based on the number of accommodations offered, and the type of rooms provided.</p>
+<p>Therefore, we take a further exploration of each room type.</p>
+<ol type="1">
+<li><p><strong>Entire Home/apt</strong> and <strong>Hotel Room</strong> have high likelihood of professionalism, because these means their hosts are renting out an entire, separate unit. It is more straightforward to the host of a Hotel room. If a host has multiple “Entire home/apt” listings, they are almost certainly a professional operator, as they are not living in any of the units and are solely focused on commercial rental income.</p></li>
+<li><p><strong>Private Room</strong> and <strong>Shared Room</strong> have lower likelihood. These often imply a host lives on-site and is renting out a spare bedroom, which is closer to the original, non-commercial ethos of Airbnb. While some professional operators manage multiple private rooms within a single large property, the classification itself is a much softer signal than “Entire home/apt.” We will explore this case later in this section.</p></li>
+</ol>
+<p>Since single-room landlords with “Private” and “Shared” rooms perfectly align with the concept of the “sharing economy”, they are directly excluded from the “professional landlords” category. Therefore, our criteria for a “Professional Landlord” must satisfy a listing count of at least one and a room type of either ‘Entire home/apt’ or ‘Hotel room’.</p>
+</section>
+<section id="the-number-of-professional-landlords" class="level4">
+<h4 class="anchored" data-anchor-id="the-number-of-professional-landlords">The number of professional landlords</h4>
+<div id="8c38d583" class="cell" data-execution_count="22">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FA_6_files/figure-html/cell-23-output-1.png" width="951" height="578" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+--- 3. Distribution Comparison (Percentage) ---
+                 Multi-Host  Single-Host
+room_type                               
+Entire home/apt   66.194485    62.811277
+Private room      33.312046    37.084223
+Shared room        0.294146     0.086713
+Hotel room         0.199323     0.017787</code></pre>
+</div>
+</div>
+<p>Based on our criteria of “Professional Landlord”, there are 35,953 of them, which is 64.43% of the whole number of hosts. This can also be viewed as further evidence showing Airbnb is “out of control” in London.</p>
+</section>
+<section id="limitation" class="level4">
+<h4 class="anchored" data-anchor-id="limitation">Limitation:</h4>
+<p>Multi-room landlords offering “Private” or “Shared” rooms were not categorised as “professional landlords” because their listings’ descriptions exhibit limited overall textual similarity to the professional standards observed in “Entire home/apt” and “Hotel” listings (based on a comparison of word frequency in descriptions, showing an average similarity of approximately 35%). This is a minor limitation as shared and private rooms represent a relatively smaller proportion of all listings (approximately 33%). Therefore, excluding this segment does not significantly alter our main conclusions regarding professional landlord behaviour.</p>
+<div id="b4129363" class="cell" data-execution_count="23">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FA_6_files/figure-html/cell-24-output-1.png" width="759" height="667" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>--- Room Type Distribution for Multi-Listing Landlords ---
+
+1. Raw Counts:
+room_type
+Entire home/apt    34206
+Private room       17214
+Shared room          152
+Hotel room           103
+
+2. Percentage Distribution:
+room_type
+Entire home/apt    66.19%
+Private room       33.31%
+Shared room         0.29%
+Hotel room           0.2%</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="how-many-properties-would-be-affected-by-the-oppositions-proposal" class="level3">
+<h3 class="anchored" data-anchor-id="how-many-properties-would-be-affected-by-the-oppositions-proposal">2.2 How many properties would be affected by the opposition’s proposal?</h3>
+<p>Since the opposition proposed that “professional landlords” should take the responsibility, we estimate 62,000+ (66.39% of London Airbnb market) units will be directly affected, as determined from our analysis in the previous question.</p>
+<section id="why-these-properties" class="level4">
+<h4 class="anchored" data-anchor-id="why-these-properties">Why these properties?</h4>
+<p>Under the proposal, all 62,000+ professional properties will be subject to mandatory registration and taxed at a higher rate. Conversely the remaining approximately 33,000 ‘private and shared room’ accommodations (accounting for 33% of the market share) will be exempt from this tax. This provides the mayor with a political barrier protecting residents who rent out spare rooms for a living.</p>
+<p>Although the 62,000 units of housing only account for approximately 1.6% of the total 3.8 million housing units in London <span class="citation" data-cites="LHS2024">(<a href="#ref-LHS2024" role="doc-biblioref">London’s Housing Stock Research Unit, 2024</a>)</span>, their impact is not uniform. Most of these affected properties are concentrated in Zones 1 and 2. For example, in Westminster, which recorded the UK’s highest short-let guest nights (around 3.9m in 2024) according to Housing Analysis Team <span class="citation" data-cites="ONS2025">(<a href="#ref-ONS2025" role="doc-biblioref">Housing Analysis Team, 2025</a>)</span>, the tax would affect approximately 8.8% of the borough’s housing stock. Therefore, this policy would be a targeted measure.</p>
+<p>Beyond the directly targeted short-term rental stock, non-professional hosts and renters will also experience the ripple effects through broader housing market dynamics. The opposition’s proposal could reduce a supplementary income stream from which they often support mortgages or living costs. More critically, while the policy aims to increase long-term supply, it risks pushing these properties into vacancy, sale, or less regulated grey-market letting.</p>
+</section>
+</section>
+</section>
+<section id="evaluation-of-the-proposal" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-of-the-proposal">3. Evaluation of the proposal</h2>
+<section id="what-are-the-likely-pros-and-cons-of-the-oppositions-proposal" class="level3">
+<h3 class="anchored" data-anchor-id="what-are-the-likely-pros-and-cons-of-the-oppositions-proposal">3.1 What are the likely pros and cons of the opposition’s proposal?</h3>
+<p>The opposition’s proposal helps the Mayor demonstrate responsiveness and leadership on the highly salient public concern of housing. Secondly, because the proposal targets professional landlords and areas where short-term rental pressures are most concentrated, it can also be presented as a proportionate and targeted intervention which reduces the political cost of decisive action. Besides, the proposal helps shift the conversation away from a personal scandal involving the Mayor’s advisor and towards a system-level regulatory challenge. Finally, mandatory registration creates a formal need for platform-held data, which makes it easier to push for structured data-sharing arrangements. However, to implement this proposal will present several potential risks. Firstly, as the Mayor did not introduce the policy initially, any implementation difficulties or a gap between promises and outcomes will be interpreted as evidence of weak leadership. Additionally, registration and licensing regimes are administratively complex and resource-intensive, which is difficult to deliver at scale. Experience in Scotland shows that delays in processing and limited enforcement capacity can turn the policy from a sign of control into evidence of administrative weakness.</p>
+<p>For professional landlords, stricter regulations might bring more profits to those compliant operators, because guests tend to choose legal accommodations, which incentivises professional landlords to adhere to regulations <span class="citation" data-cites="botogarcia2024">(<a href="#ref-botogarcia2024" role="doc-biblioref">Boto-García, 2024</a>)</span>. It also raises costs for non-compliant multi-listing operators, reducing unfair competition for those who operate within the rules. Meanwhile, higher compliance costs may reduce the relative attractiveness of short-term letting, prompting some properties to return to the long-term rental market. This could expand housing options for residents and, to some extent, improve neighbourhood stability and living conditions. However, the proposal would significantly increase operating costs for professional landlords. The attempt of passing the additional costs on to guests may cause customer reduction in a competitive market, creating further downward pressure on profitability. The proposal will also result in the loss of secondary income sources for some individuals, such as middle-class hosts renting their holiday properties and young investors letting their buy-to-let properties. These are misidentified as professional landlords. Additionally, in some areas where profits remain high, increased compliance costs may incentivise landlords to move transactions off-platform in order to avoid regulation, which is risky for both hosts and guests by removing both parties from platform safeguards.</p>
+<p>Firstly, the policy increases data availability and supports clearer enforcement of specific regulatory requirements by enabling more systematic registration. Secondly, the Council Tax can be used to pay for enforcement teams, neighbourhood services or affordable housing programmes thereby strengthening the policy’s legitimacy. Thirdly, it helps preserve local specificity in the regulation of rental housing markets. Research suggests that platforms often pursue uniform regulatory standards across cities to minimise compliance costs. This proposal however helps ground regulation in local contexts and supports data-driven and effective implementation<span class="citation" data-cites="ferreri2018">(<a href="#ref-ferreri2018" role="doc-biblioref">Ferreri and Sanyal, 2018</a>)</span>. However, there are several potential obstacles. Firstly, delivery and cost pressures are high. Registration or licensing requires ongoing investment in systems, processing inspections and enforcement <span class="citation" data-cites="scottish-government-2025">(<a href="#ref-scottish-government-2025" role="doc-biblioref">Scottish Government, 2025</a>)</span> and implementation can be constrained by limited capacity and competing priorities <span class="citation" data-cites="propertymark-2024">(<a href="#ref-propertymark-2024" role="doc-biblioref">Propertymark, no date</a>)</span>. Secondly, stricter registration and higher tax treatment may reduce market dynamism by raising entry barriers for new and smaller platforms <span class="citation" data-cites="shabr2017">(<a href="#ref-shabr2017" role="doc-biblioref">Shabrina <em>et al.</em>, 2017</a>)</span>. Thirdly, locally tailored regulation in London may create friction with national frameworks. Short-term rentals cut across planning taxation data access and platform accountability which can conflict with more standardised UK-wide systems <span class="citation" data-cites="lord-tewdwr-jones-2014">(<a href="#ref-lord-tewdwr-jones-2014" role="doc-biblioref">Lord and Tewdwr-Jones, 2014</a>)</span>.</p>
+</section>
+<section id="can-the-story-be-reframed-as-a-positive-one-about-social-mobility-or-housing-opportunity" class="level3">
+<h3 class="anchored" data-anchor-id="can-the-story-be-reframed-as-a-positive-one-about-social-mobility-or-housing-opportunity">3.2 Can the story be reframed as a positive one about social mobility or housing opportunity?</h3>
+<p>In reviewing the narrative of the scandal, it is important to consider that the individual appears to belong to a middle-income professional group rather than an established capital owner. He may have entered the housing market through mortgage finance rather than inherited wealth and short-term letting may have assisted him in managing mortgage payments and living costs while gradually building assets in London. This context suggests a reinterpretation of the story through the lens of social mobility and housing opportunity.</p>
+<p>From a social mobility perspective, shared housing and buy-to-let properties provide rental income which offers young people additional financial resources and greater opportunities to remain in their homes. This enables them to have greater access to urban spaces including more employment and education opportunities and social interactions. For cities, objectively greater financial gains represent the vitality of the city’s economy which can attract more and more talent. This is particularly important for large cities such as London, <span class="citation" data-cites="LGP2025">London Growth Plan (<a href="#ref-LGP2025" role="doc-biblioref">2025</a>)</span> emphasises “Make sure London remains attractive for the best talent in the world” and “grow a skilled and diverse workforce” and “make housing more affordable”.</p>
+<p>In terms of housing opportunity, the proposal draws a clear line between genuine sharing and commercial activity. Clearer regulation helps ensure commercial STR develops in a controlled and sustainable way, and higher taxation of commercial operators can generate additional council revenue, which can be reinvested directly into addressing housing pressures.</p>
+</section>
+</section>
+<section id="references" class="level2 unnumbered">
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-botogarcia2024" class="csl-entry" role="listitem">
+Boto-García, D. (2024) <span>“Illegal Airbnb properties and hosts’ professionalism,”</span> <em>Tourism Economics</em>, 31(4).
+</div>
+<div id="ref-ferreri2018" class="csl-entry" role="listitem">
+Ferreri, M. and Sanyal, R. (2018) <span>“Platform economies and urban planning Airbnb and regulated deregulation in London,”</span> <em>Urban Studies</em>, 55(15), pp. 3353–3368.
+</div>
+<div id="ref-ONS2025" class="csl-entry" role="listitem">
+Housing Analysis Team (2025) <em>Short-term lets through online collaborative economy platforms, UK</em>. Office for National Statistics. Available at: <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/housing/bulletins/shorttermletsthroughonlinecollaborativeeconomyplatformsuk/januarytodecember2024">https://www.ons.gov.uk/peoplepopulationandcommunity/housing/bulletins/shorttermletsthroughonlinecollaborativeeconomyplatformsuk/januarytodecember2024</a>.
+</div>
+<div id="ref-LGP2025" class="csl-entry" role="listitem">
+London Growth Plan (2025) <em>London’s growth plan</em>. Available at: <a href="https://growthplan.london/">https://growthplan.london/</a>.
+</div>
+<div id="ref-LHS2024" class="csl-entry" role="listitem">
+London’s Housing Stock Research Unit (2024) <em>London’s housing stock</em>. Greater London Authority. Available at: <a href="https://www.london.gov.uk/sites/default/files/2024-11/London%27s%20Housing%20Stock%20-%20Research%20Unit%20-%20November%202024.pdf">https://www.london.gov.uk/sites/default/files/2024-11/London%27s%20Housing%20Stock%20-%20Research%20Unit%20-%20November%202024.pdf</a>.
+</div>
+<div id="ref-lord-tewdwr-jones-2014" class="csl-entry" role="listitem">
+Lord, A. and Tewdwr-Jones, M. (2014) <span>“Is Planning <span>‘Under Attack’</span>? Chronicling the Deregulation of Urban and Environmental Planning in England,”</span> <em>European Planning Studies</em>, 22(2), pp. 345–361.
+</div>
+<div id="ref-propertymark-2024" class="csl-entry" role="listitem">
+Propertymark (no date) <em>STL licensing report suggests scheme is raising standards despite concerns</em>. Propertymark. Available at: <a href="https://www.propertymark.co.uk/resource/stl-licensing-report-suggests-scheme-is-raising-standards-despite-concerns.html">https://www.propertymark.co.uk/resource/stl-licensing-report-suggests-scheme-is-raising-standards-despite-concerns.html</a>.
+</div>
+<div id="ref-scottish-government-2025" class="csl-entry" role="listitem">
+Scottish Government (2025) <em>Short term lets licensing statistics Scotland to 30 June 2025</em>. Scottish Government. Available at: <a href="https://www.gov.scot/publications/short-term-lets-licensing-statistics-scotland-to-30-june-2025/">https://www.gov.scot/publications/short-term-lets-licensing-statistics-scotland-to-30-june-2025/</a>.
+</div>
+<div id="ref-Shabrin2021Air" class="csl-entry" role="listitem">
+Shabrin, M., Islam, R. and Hasan, M. (2021) <span>“Air pollution and sustainable materials,”</span> <em>Journal of Environmental Design</em>, 15(2), pp. 45–60.
+</div>
+<div id="ref-shabr2017" class="csl-entry" role="listitem">
+Shabrina, Z. <em>et al.</em> (2017) <em>Beyond informality: The rise of peer-to-peer (P2P) renting</em>. 209. Centre for Advanced Spatial Analysis, University College London. Available at: <a href="https://www.ucl.ac.uk/bartlett/publications/2017/mar/casa-working-paper-209">https://www.ucl.ac.uk/bartlett/publications/2017/mar/casa-working-paper-209</a>.
+</div>
+</div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
